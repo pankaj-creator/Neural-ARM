@@ -8,9 +8,16 @@ from sklearn.decomposition import NMF
 import numpy as np
 import pandas as pd
 
-#import tensorflow as tf
-import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior() 
+import tensorflow as tf
+#import tensorflow.compat.v1 as tf
+#tf.disable_v2_behavior()
+from tensorflow.python.framework import ops
+
+"""
+resolver = tf.contrib.cluster_resolver.TPUClusterResolver()
+tf.contrib.distribute.initialize_tpu_system(resolver)
+strategy = tf.contrib.distribute.TPUStrategy(resolver)
+#"""
 
 from sklearn.metrics import roc_auc_score
 import matplotlib.pyplot as plt
@@ -109,12 +116,18 @@ learning_rate = 0.00002
 keep_prob = 0.6
 l2_reg_rate = 0.00001
 
-tf.reset_default_graph()
+
+ops.reset_default_graph()
+#tf.reset_default_graph()
 
 
-is_training = tf.placeholder_with_default(False, shape = ())
-X = tf.placeholder(tf.float32, shape=[None,input_dim])
-X_drop = tf.contrib.layers.dropout(X, keep_prob, is_training = is_training)
+#is_training = tf.placeholder_with_default(False, shape = ())
+#X = tf.placeholder(tf.float32, shape=[None,input_dim])
+#X_drop = tf.contrib.layers.dropout(X, keep_prob, is_training = is_training)
+
+is_training = ops.placeholder_with_default(False, shape = ())
+X = ops.placeholder(tf.float32, shape=[None,input_dim])
+X_drop = ops.contrib.layers.dropout(X, keep_prob, is_training = is_training)
 
 
 # --------------------- Encoder Variables --------------- #
@@ -209,7 +222,7 @@ for i in range(100):
     xx=np.asarray(np.nonzero(items_h[i]))
     [m, n]=(np.asarray(np.nonzero(items_h[i]))).shape
     support_A_B=len(np.intersect1d(np.nonzero(onehot_items[:,xx[0,n-1]]),np.nonzero(onehot_items[:,xx[0,n-2]])))/total_transection
-    # print("{" + str(unique_items[xx[0,n-1]]) + "}" +"=>" "{" + str(unique_items[xx[0,n-2]]) + "}")
+    print("{" + str(unique_items[xx[0,n-1]]) + "}" +"=>" "{" + str(unique_items[xx[0,n-2]]) + "}")
     [xxxx,sup_A]=(np.asarray(np.nonzero(onehot_items[:,xx[0,n-1]]))).shape
     [xxxx,sup_B]=(np.asarray(np.nonzero(onehot_items[:,xx[0,n-2]]))).shape
     support_A=sup_A/total_transection
@@ -217,7 +230,7 @@ for i in range(100):
     confidence_A_B=support_A_B / (support_A)
     confidence_B_A=support_A_B / (support_B)
     # Lift calculation
-    lift=confidence_A_B / support_B
+    lift=confidence_A_B/support_B
 
 
-    print("{" + str(unique_items[xx[0,n-1]]) + "}" +"=>" "{" + str(unique_items[xx[0,n-2]]) +"=>" "{" + str(unique_items[xx[0,n-2]]) + "}"+" "+ "support="+ str(round(support_A_B,2)) +" "+ "confidence=" + str(round(confidence_A_B,2)) "+ "lift=" + str(round(lift)) ) 
+    print("{" + str(unique_items[xx[0,n-1]]) + "}" +"=>" "{" + str(unique_items[xx[0,n-2]]) +"=>" "{" + str(unique_items[xx[0,n-2]]) + "}"+" "+ "support="+ str(round(support_A_B,2)) +" "+ "confidence=" + str(round(confidence_A_B,2)) + " " + "lift=" + str(round(lift)) ) 
