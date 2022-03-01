@@ -2,24 +2,16 @@
 """
 Created on Sat Jan 20 23:14:58 2018
 
-@author: H K Patel
+@author: Dr. H K Patel
 """
+import time
+start = time.time()
 from sklearn.decomposition import NMF
 import numpy as np
 import pandas as pd
-
 import tensorflow as tf
-#import tensorflow.compat.v1 as tf
-#tf.disable_v2_behavior()
-from tensorflow.python.framework import ops
-
-"""
-resolver = tf.contrib.cluster_resolver.TPUClusterResolver()
-tf.contrib.distribute.initialize_tpu_system(resolver)
-strategy = tf.contrib.distribute.TPUStrategy(resolver)
-#"""
-
 from sklearn.metrics import roc_auc_score
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_style("whitegrid")
@@ -44,7 +36,7 @@ def get_unique_items(data):
     return np.unique(items)
 
 def get_onehot_items(data,unique_items):
-    onehot_items = np.zeros((len(data),len(unique_items)),dtype = int)
+    onehot_items = np.zeros((len(data),len(unique_items)),dtype = np.int)
     for i, r in enumerate(data):
         for j, c in enumerate(unique_items):
             onehot_items[i,j] = int(c in r)
@@ -109,27 +101,20 @@ n_hidden_3 = 32
 n_hidden_4 = 16
 
 training_epochs = 30
-batch_size = 10
+batch_size = 50
 total_batches = (train_x.shape[0] // batch_size)
 
 learning_rate = 0.00002
 keep_prob = 0.6
 l2_reg_rate = 0.00001
 
+tf.reset_default_graph()
 
-ops.reset_default_graph()
-#tf.reset_default_graph()
-
-
-#is_training = tf.placeholder_with_default(False, shape = ())
-#X = tf.placeholder(tf.float32, shape=[None,input_dim])
-#X_drop = tf.contrib.layers.dropout(X, keep_prob, is_training = is_training)
-
-is_training = ops.placeholder_with_default(False, shape = ())
-X = ops.placeholder(tf.float32, shape=[None,input_dim])
-X_drop = ops.contrib.layers.dropout(X, keep_prob, is_training = is_training)
-
-
+is_training = tf.placeholder_with_default(False, shape = ())
+X = tf.placeholder(tf.float32, shape=[None,input_dim])
+X_drop = tf.contrib.layers.dropout(X, keep_prob, is_training = is_training)
+#X_drop = tf.contrib.layers.dropout(X, keep_prob, noise_shape=None, is_training=True, outputs_collections=None, scope=None, seed=None )
+print("X_drop", X_drop)
 # --------------------- Encoder Variables --------------- #
 
 e_weights_h1 = weight_variable("el1",[input_dim, n_hidden_1])
@@ -143,7 +128,7 @@ e_biases_h3 = bias_variable([n_hidden_3])
 
 e_weights_h4 = weight_variable("el4",[n_hidden_3, n_hidden_4])
 e_biases_h4 = bias_variable([n_hidden_4])
-
+print(e_biases_h4)
 # --------------------------------------------------------- #
 
 
@@ -164,7 +149,9 @@ d_biases_h4 = bias_variable([input_dim])
 # --------------------------------------------------------- #
 
 encoded = encoder(X_drop)
-decoded = decoder(encoded) 
+print("HHHH==",encoded)
+decoded = decoder(encoded)
+print("MMMM==", decoded) 
 
 regularizer = tf.contrib.layers.l2_regularizer(l2_reg_rate)
 reg_loss = regularizer(e_weights_h1) + regularizer(e_weights_h2) + regularizer(e_weights_h3) + regularizer(e_weights_h4) 
@@ -184,7 +171,7 @@ with tf.Session() as session:
     
         tr_c = session.run(cost_function,feed_dict={X: train_x, is_training: False})
         val_c = session.run(cost_function,feed_dict={X: validation_x, is_training: False})
-        print(epoch,"\t",tr_c," ",val_c)
+        print(epoch+1,"\t",tr_c," ",val_c)
     
     tr_p = session.run(decoded,feed_dict={X: train_x, is_training: False})
     roc_auc = roc_auc_score(train_x,tr_p,average = "samples")
@@ -201,36 +188,41 @@ with tf.Session() as session:
     
     # -------------------------------------------------------------------------------- #
     item_preds = session.run(decoded,feed_dict={X: test_x.reshape(-1,169), is_training: False})
-    item_preds[item_preds >= 0.1] = 1
-    item_preds[item_preds < 0.1] = 0
+    print("ttt==",len(item_preds))
+    item_preds[item_preds >= 0.05] = 1
+    item_preds[item_preds < 0.05] = 0
     
-    
-# i = 60
-# print("Items in basket: ",get_items_from_ohe(test_x[i],unique_items))
-# print("Recommended item(s): ",get_items_from_ohe(item_preds[i],unique_items))
+"""   
+i = 100
+#print("Items in basket: ",get_items_from_ohe(test_x[i],unique_items))
+print("Recommended item(s): ",get_items_from_ohe(item_preds[i],unique_items))
 
-
+"""
 model = NMF(n_components=100, init='random', random_state=0)
 transation_w = model.fit_transform(item_preds)
 items_h = model.components_
 
-# get_items_from_ohe(items_h[1],unique_items)
+#get_items_from_ohe(items_h[1],unique_items)
 
-print("Recommended item(s): ", get_items_from_ohe(items_h[0],unique_items))
-total_transection = 9835
+print("Frequent item(s): ",get_items_from_ohe(items_h[0],unique_items))
+
+
+total_transection=9835
 for i in range(100):
     xx=np.asarray(np.nonzero(items_h[i]))
-    [m, n]=(np.asarray(np.nonzero(items_h[i]))).shape
+    [m,n]=(np.asarray(np.nonzero(items_h[i]))).shape
     support_A_B=len(np.intersect1d(np.nonzero(onehot_items[:,xx[0,n-1]]),np.nonzero(onehot_items[:,xx[0,n-2]])))/total_transection
-    print("{" + str(unique_items[xx[0,n-1]]) + "}" +"=>" "{" + str(unique_items[xx[0,n-2]]) + "}")
+    #print("{" + str(unique_items[xx[0,n-1]]) + "}" +"=>" "{" + str(unique_items[xx[0,n-2]]) + "}")
     [xxxx,sup_A]=(np.asarray(np.nonzero(onehot_items[:,xx[0,n-1]]))).shape
     [xxxx,sup_B]=(np.asarray(np.nonzero(onehot_items[:,xx[0,n-2]]))).shape
     support_A=sup_A/total_transection
     support_B=sup_B/total_transection
     confidence_A_B=support_A_B / (support_A)
     confidence_B_A=support_A_B / (support_B)
-    # Lift calculation
-    lift=confidence_A_B/support_B
+    #lift and conviction
+    lift_A_B=confidence_A_B / support_B
+    conviction_A_B=(1-support_B)/(1-confidence_A_B)
+    print(i+1, "{" + str(unique_items[xx[0,n-1]]) + "}" +"=>" "{" + str(unique_items[xx[0,n-2]]) + "}"+" "+ "support="+ str(round(support_A_B,2)) +" "+ "confidence=" + str(round(confidence_A_B,2))  +" "+ "lift=" + str(round(lift_A_B,2))  +" "+ "conviction=" + str(round(conviction_A_B,2)) )
 
-
-    print("{" + str(unique_items[xx[0,n-1]]) + "}" +"=>" "{" + str(unique_items[xx[0,n-2]]) +"=>" "{" + str(unique_items[xx[0,n-2]]) + "}"+" "+ "support="+ str(round(support_A_B,2)) +" "+ "confidence=" + str(round(confidence_A_B,2)) + " " + "lift=" + str(round(lift)) ) 
+end = time.time()
+print("Time consumed in working: ",end - start)
