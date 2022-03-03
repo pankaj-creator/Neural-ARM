@@ -1,7 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 """
 Created on Wed Jul 24 11:01:26 2019
-
 @author: H K PATEL
 """
 import time
@@ -11,6 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from apyori import apriori
+#from mlxtend.frequent_patterns import apriori, association_rules
 from sklearn.decomposition import NMF
 import tensorflow as tf
 from sklearn.metrics import roc_auc_score
@@ -100,6 +100,9 @@ for item in association_results:
 
     print("Confidence: " + str(item[2][0][2]))
     print("Lift: " + str(item[2][0][3]))
+    #conviction
+    Convicn=(1-float(str(item[1])))/(1-float(str(item[2][0][2])))
+    print("Conviction: " + Convicn)
     print("=====================================")
         
     temp = pd.DataFrame({'item1':[ item1], 'item2': [item2], 'Support': (item[1]), 'Confidence': (item[2][0][2]), 'Lift': (item[2][0][3])})

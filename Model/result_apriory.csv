@@ -1,0 +1,141 @@
+,item1,item2,Support,Confidence,Lift
+0,"['beef', 'other vegetables']",['pork'],0.004168784951703101,0.211340206185567,3.665839378897798
+0,"['beef', 'other vegetables']",['root vegetables'],0.007930859176410779,0.40206185567010316,3.688692491152486
+0,"['tropical fruit', 'beef']",['other vegetables'],0.004473817996949669,0.5866666666666667,3.031984585741811
+0,"['rolls/buns', 'beef']",['root vegetables'],0.00498220640569395,0.3656716417910448,3.354832646469147
+0,"['whole milk', 'beef']",['root vegetables'],0.008032536858159633,0.37799043062200954,3.467850639148754
+0,"['yogurt', 'beef']",['root vegetables'],0.004575495678698526,0.391304347826087,3.5899983776768334
+0,"['berries', 'whole milk']",['whipped/sour cream'],0.004270462633451958,0.36206896551724144,5.050990462215702
+0,"['butter', 'other vegetables']",['domestic eggs'],0.004575495678698526,0.2284263959390863,3.6002782116360796
+0,"['butter', 'whole milk']",['domestic eggs'],0.005998983223182512,0.21771217712177124,3.4314090737061216
+0,"['butter', 'other vegetables']",['root vegetables'],0.0066090493136756485,0.3299492385786802,3.027099590878097
+0,"['butter', 'other vegetables']",['whipped/sour cream'],0.005795627859684799,0.2893401015228426,4.036397019116535
+0,"['tropical fruit', 'butter']",['yogurt'],0.004575495678698526,0.45918367346938777,3.291597251145356
+0,"['butter', 'whole milk']",['whipped/sour cream'],0.006710726995424504,0.24354243542435425,3.397503336735495
+0,"['chicken', 'yogurt']",['other vegetables'],0.004880528723945094,0.5853658536585367,3.0252617817822953
+0,"['chicken', 'whole milk']",['root vegetables'],0.005998983223182512,0.34104046242774566,3.1288553619187303
+0,"['chicken', 'whole milk']",['whipped/sour cream'],0.004168784951703101,0.23699421965317916,3.3061534046652725
+0,"['citrus fruit', 'other vegetables']",['root vegetables'],0.010371123538383325,0.3591549295774648,3.295045459323103
+0,"['tropical fruit', 'other vegetables']",['citrus fruit'],0.009049313675648195,0.2521246458923513,3.0462480250015664
+0,"['citrus fruit', 'pip fruit']",['tropical fruit'],0.005592272496187087,0.4044117647058823,3.8540597925216593
+0,"['citrus fruit', 'root vegetables']",['tropical fruit'],0.0056939501779359435,0.3218390804597701,3.0671389111645726
+0,"['citrus fruit', 'whipped/sour cream']",['yogurt'],0.004575495678698526,0.42056074766355145,3.01473393095556
+0,"['root vegetables', 'cream cheese ']",['other vegetables'],0.004473817996949669,0.5945945945945945,3.0729573504139975
+0,"['curd', 'other vegetables']",['whipped/sour cream'],0.004372140315200813,0.25443786982248523,3.5494985102186414
+0,"['curd', 'root vegetables']",['yogurt'],0.004677173360447382,0.42990654205607476,3.0817280183101277
+0,"['curd', 'tropical fruit']",['yogurt'],0.0052872394509405184,0.5148514851485149,3.6906445746615475
+0,"['curd', 'whole milk']",['whipped/sour cream'],0.005897305541433655,0.22568093385214008,3.148329055937302
+0,"['curd', 'whipped/sour cream']",['yogurt'],0.004575495678698526,0.43689320388349523,3.131810976817912
+0,"['margarine', 'whole milk']",['domestic eggs'],0.005185561769191663,0.2142857142857143,3.3774038461538463
+0,"['domestic eggs', 'other vegetables']",['root vegetables'],0.007320793085917641,0.32876712328767127,3.016254344714783
+0,"['domestic eggs', 'other vegetables']",['whipped/sour cream'],0.005083884087442806,0.228310502283105,3.185012468020337
+0,"['frozen vegetables', 'other vegetables']",['root vegetables'],0.006100660904931368,0.3428571428571428,3.145522388059701
+0,"['hygiene articles', 'whole milk']",['tropical fruit'],0.004067107269954245,0.31746031746031744,3.0254091300602926
+0,"['margarine', 'tropical fruit']",['yogurt'],0.004067107269954245,0.43478260869565216,3.1166814551907716
+0,"['whole milk', 'oil']",['root vegetables'],0.004473817996949669,0.39639639639639634,3.6367150732822373
+0,"['onions', 'other vegetables']",['root vegetables'],0.0056939501779359435,0.4,3.6697761194029854
+0,"['onions', 'whole milk']",['root vegetables'],0.004778851042196238,0.3949579831932773,3.6235184372256364
+0,"['pip fruit', 'other vegetables']",['tropical fruit'],0.00945602440264362,0.3618677042801557,3.4486132476698947
+0,"['pip fruit', 'whipped/sour cream']",['other vegetables'],0.005592272496187087,0.6043956043956045,3.1236104935526905
+0,"['tropical fruit', 'other vegetables']",['root vegetables'],0.012302999491611592,0.34277620396600567,3.144779819035136
+0,"['tropical fruit', 'other vegetables']",['whipped/sour cream'],0.007829181494661922,0.21813031161473087,3.042995198199827
+0,"['yogurt', 'other vegetables']",['whipped/sour cream'],0.010167768174885612,0.23419203747072598,3.2670619695384255
+0,"['pip fruit', 'rolls/buns']",['tropical fruit'],0.004473817996949669,0.32116788321167883,3.0607423753748657
+0,"['pip fruit', 'root vegetables']",['tropical fruit'],0.0052872394509405184,0.33986928104575165,3.238967421593961
+0,"['pip fruit', 'yogurt']",['tropical fruit'],0.006405693950177936,0.3559322033898305,3.3920476941269215
+0,"['rolls/buns', 'shopping bags']",['sausage'],0.005998983223182512,0.3072916666666667,3.2707938762626267
+0,"['tropical fruit', 'root vegetables']",['whipped/sour cream'],0.004575495678698526,0.2173913043478261,3.032685784767191
+0,"['yogurt', 'root vegetables']",['tropical fruit'],0.00813421453990849,0.31496062992125984,3.00158701092596
+0,"['yogurt', 'root vegetables']",['whipped/sour cream'],0.006405693950177936,0.2480314960629921,3.4601273245099677
+0,"['sliced cheese', 'whole milk']",['yogurt'],0.004575495678698526,0.4245283018867925,3.0431748170966504
+0,"['tropical fruit', 'whipped/sour cream']",['yogurt'],0.0062023385866802234,0.44852941176470584,3.215223589435774
+0,"['beef', 'other vegetables']",['pork'],0.004168784951703101,0.211340206185567,3.665839378897798
+0,"['beef', 'other vegetables']",['root vegetables'],0.007829181494661922,0.3969072164948454,3.6448015632369786
+0,"['tropical fruit', 'beef']",['other vegetables'],0.004372140315200813,0.581081081081081,3.003117410631861
+0,"['rolls/buns', 'beef']",['root vegetables'],0.004880528723945094,0.35820895522388063,3.289435177055897
+0,"['whole milk', 'beef']",['root vegetables'],0.007930859176410779,0.37320574162679426,3.427150764612065
+0,"['yogurt', 'beef']",['root vegetables'],0.004473817996949669,0.38260869565217387,3.5134981528843414
+0,"['berries', 'whole milk']",['whipped/sour cream'],0.004270462633451958,0.36206896551724144,5.0581651645768035
+0,"['butter', 'other vegetables']",['domestic eggs'],0.004473817996949669,0.22335025380710657,3.5259225460560084
+0,"['butter', 'whole milk']",['domestic eggs'],0.005897305541433655,0.2140221402214022,3.3786641237198887
+0,"['butter', 'other vegetables']",['whipped/sour cream'],0.0056939501779359435,0.28426395939086296,3.9712159667743427
+0,"['tropical fruit', 'butter']",['yogurt'],0.004473817996949669,0.4489795918367347,3.220798166093571
+0,"['butter', 'whole milk']",['whipped/sour cream'],0.0066090493136756485,0.23985239852398524,3.3507788913116405
+0,"['chicken', 'whole milk']",['root vegetables'],0.005897305541433655,0.3352601156069364,3.0786958328610825
+0,"['chicken', 'whole milk']",['whipped/sour cream'],0.004067107269954245,0.23121387283236994,3.2300972149238047
+0,"['citrus fruit', 'other vegetables']",['root vegetables'],0.010269445856634469,0.3556338028169014,3.2657875356715453
+0,"['tropical fruit', 'other vegetables']",['citrus fruit'],0.008947635993899338,0.24929178470254953,3.0157253413893907
+0,"['citrus fruit', 'pip fruit']",['tropical fruit'],0.005592272496187087,0.4044117647058823,3.857797968848063
+0,"['citrus fruit', 'root vegetables']",['tropical fruit'],0.005592272496187087,0.31609195402298845,3.015290366455957
+0,"['root vegetables', 'cream cheese ']",['other vegetables'],0.004372140315200813,0.581081081081081,3.0046963367152637
+0,"['curd', 'other vegetables']",['whipped/sour cream'],0.004270462633451958,0.24852071005917165,3.471876681011297
+0,"['curd', 'root vegetables']",['yogurt'],0.004575495678698526,0.42056074766355145,3.0169328616127125
+0,"['curd', 'tropical fruit']",['yogurt'],0.005185561769191663,0.504950495049505,3.6223108087614015
+0,"['curd', 'whole milk']",['whipped/sour cream'],0.005795627859684799,0.2217898832684825,3.0984424743544396
+0,"['curd', 'whipped/sour cream']",['yogurt'],0.004473817996949669,0.42718446601941745,3.064448740555048
+0,"['margarine', 'whole milk']",['domestic eggs'],0.005083884087442806,0.21008403361344538,3.316495137380795
+0,"['domestic eggs', 'other vegetables']",['whipped/sour cream'],0.00498220640569395,0.22374429223744294,3.1257459007887096
+0,"['frozen vegetables', 'other vegetables']",['root vegetables'],0.006100660904931368,0.3428571428571428,3.148459383753501
+0,"['whole milk', 'oil']",['root vegetables'],0.004473817996949669,0.39639639639639634,3.640110698934228
+0,"['onions', 'other vegetables']",['root vegetables'],0.0056939501779359435,0.4,3.673202614379085
+0,"['onions', 'whole milk']",['root vegetables'],0.004778851042196238,0.3949579831932773,3.626901741088592
+0,"['pip fruit', 'other vegetables']",['tropical fruit'],0.00945602440264362,0.3618677042801557,3.4519581683756853
+0,"['pip fruit', 'whipped/sour cream']",['other vegetables'],0.005592272496187087,0.6043956043956045,3.1252527703631805
+0,"['tropical fruit', 'other vegetables']",['root vegetables'],0.012201321809862735,0.33994334277620397,3.1217019385657947
+0,"['tropical fruit', 'other vegetables']",['whipped/sour cream'],0.007727503812913066,0.21529745042492918,3.0077420808653104
+0,"['yogurt', 'other vegetables']",['whipped/sour cream'],0.010066090493136757,0.23185011709601874,3.238985655737705
+0,"['pip fruit', 'rolls/buns']",['tropical fruit'],0.004473817996949669,0.32116788321167883,3.0637110876691187
+0,"['pip fruit', 'root vegetables']",['tropical fruit'],0.0052872394509405184,0.33986928104575165,3.242109000082413
+0,"['pip fruit', 'yogurt']",['tropical fruit'],0.006405693950177936,0.3559322033898305,3.395337750086308
+0,"['rolls/buns', 'shopping bags']",['sausage'],0.005998983223182512,0.3072916666666667,3.2743375315998557
+0,"['yogurt', 'root vegetables']",['whipped/sour cream'],0.00630401626842908,0.2440944881889764,3.4100416070150326
+0,"['sliced cheese', 'whole milk']",['yogurt'],0.004575495678698526,0.4245283018867925,3.045394492382644
+0,"['tropical fruit', 'whipped/sour cream']",['yogurt'],0.006100660904931368,0.4411764705882353,3.164821727378041
+0,"['butter', 'other vegetables']","['root vegetables', 'whole milk']",0.004168784951703101,0.2081218274111675,4.255463976276159
+0,"['butter', 'other vegetables']","['yogurt', 'whole milk']",0.004372140315200813,0.2182741116751269,3.8960542437837984
+0,"['citrus fruit', 'root vegetables']","['tropical fruit', 'other vegetables']",0.004473817996949669,0.2528735632183908,7.045358340659697
+0,"['citrus fruit', 'other vegetables']","['root vegetables', 'whole milk']",0.005795627859684799,0.2007042253521127,4.103796374923136
+0,"['citrus fruit', 'tropical fruit']","['whole milk', 'other vegetables']",0.00498220640569395,0.25,3.340692934782609
+0,"['domestic eggs', 'other vegetables']","['root vegetables', 'whole milk']",0.004575495678698526,0.20547945205479454,4.201435365818928
+0,"['fruit/vegetable juice', 'other vegetables']","['yogurt', 'whole milk']",0.005083884087442806,0.24154589371980675,4.3114407708426485
+0,"['yogurt', 'pastry']","['whole milk', 'other vegetables']",0.004067107269954245,0.22988505747126436,3.0719015492253874
+0,"['pip fruit', 'other vegetables']","['root vegetables', 'whole milk']",0.005490594814438231,0.21011673151750973,4.29625375150667
+0,"['pip fruit', 'tropical fruit']","['whole milk', 'other vegetables']",0.004778851042196238,0.23383084577114427,3.124628217607614
+0,"['pip fruit', 'yogurt']","['whole milk', 'other vegetables']",0.005083884087442806,0.2824858757062147,3.7747942765905185
+0,"['root vegetables', 'rolls/buns']","['whole milk', 'other vegetables']",0.0062023385866802234,0.25523012552301255,3.4105819083136257
+0,"['yogurt', 'rolls/buns', 'other vegetables']",['root vegetables'],0.004168784951703101,0.36283185840707965,3.3287792233522655
+0,"['root vegetables', 'soda']","['whole milk', 'other vegetables']",0.004473817996949669,0.24043715846994534,3.2129068662390114
+0,"['tropical fruit', 'root vegetables']","['whole milk', 'other vegetables']",0.007015760040671073,0.33333333333333337,4.454257246376812
+0,"['tropical fruit', 'root vegetables']","['yogurt', 'other vegetables']",0.00498220640569395,0.23671497584541062,5.452205591193474
+0,"['root vegetables', 'whipped/sour cream']","['whole milk', 'other vegetables']",0.005185561769191663,0.30357142857142855,4.056555706521739
+0,"['yogurt', 'root vegetables']","['whole milk', 'other vegetables']",0.007829181494661922,0.3031496062992126,4.050918991783636
+0,"['tropical fruit', 'whipped/sour cream']","['whole milk', 'other vegetables']",0.004473817996949669,0.32352941176470584,4.323249680306905
+0,"['tropical fruit', 'other vegetables']","['yogurt', 'whole milk']",0.007625826131164209,0.21246458923512745,3.7923579584890716
+0,"['yogurt', 'whipped/sour cream']","['whole milk', 'other vegetables']",0.005592272496187087,0.2696078431372549,3.602708066922421
+0,"['tropical fruit', 'whole milk', 'rolls/buns']",['yogurt'],0.004880528723945094,0.4444444444444445,3.1859410430839
+0,"['tropical fruit', 'root vegetables']","['yogurt', 'whole milk']",0.0056939501779359435,0.2705314009661836,4.828813663343767
+0,"['tropical fruit', 'whipped/sour cream']","['yogurt', 'whole milk']",0.004372140315200813,0.3161764705882353,5.6435491619515314
+0,"['butter', 'other vegetables']","['root vegetables', 'whole milk']",0.004067107269954245,0.20304568527918782,4.160321489001692
+0,"['butter', 'other vegetables']","['yogurt', 'whole milk']",0.004270462633451958,0.2131979695431472,3.812367328103369
+0,"['citrus fruit', 'root vegetables']","['tropical fruit', 'other vegetables']",0.004372140315200813,0.24712643678160917,6.904796891327064
+0,"['citrus fruit', 'root vegetables']","['whole milk', 'other vegetables']",0.0056939501779359435,0.3218390804597701,4.306513409961686
+0,"['citrus fruit', 'tropical fruit']","['whole milk', 'other vegetables']",0.004880528723945094,0.2448979591836735,3.276967930029155
+0,"['domestic eggs', 'other vegetables']","['root vegetables', 'whole milk']",0.004473817996949669,0.2009132420091324,4.116628614916286
+0,"['fruit/vegetable juice', 'other vegetables']","['yogurt', 'whole milk']",0.005083884087442806,0.24154589371980675,4.319279754062363
+0,"['yogurt', 'pastry']","['whole milk', 'other vegetables']",0.004067107269954245,0.22988505747126436,3.07608100711549
+0,"['pip fruit', 'other vegetables']","['root vegetables', 'whole milk']",0.005490594814438231,0.21011673151750973,4.305204280155642
+0,"['pip fruit', 'tropical fruit']","['whole milk', 'other vegetables']",0.004778851042196238,0.23383084577114427,3.1288794124615023
+0,"['pip fruit', 'yogurt']","['whole milk', 'other vegetables']",0.005083884087442806,0.2824858757062147,3.779930051116492
+0,"['root vegetables', 'rolls/buns']","['whole milk', 'other vegetables']",0.006100660904931368,0.2510460251046025,3.359234907352062
+0,"['yogurt', 'rolls/buns', 'other vegetables']",['root vegetables'],0.004067107269954245,0.35398230088495575,3.250621782636358
+0,"['root vegetables', 'soda']","['whole milk', 'other vegetables']",0.004473817996949669,0.24043715846994534,3.2172781680978404
+0,"['tropical fruit', 'root vegetables']","['whole milk', 'other vegetables']",0.006914082358922217,0.3285024154589372,4.3956751782838746
+0,"['tropical fruit', 'root vegetables']","['yogurt', 'other vegetables']",0.004880528723945094,0.23188405797101452,5.3534734979927885
+0,"['root vegetables', 'whipped/sour cream']","['whole milk', 'other vegetables']",0.005083884087442806,0.29761904761904756,3.982426303854875
+0,"['yogurt', 'root vegetables']","['whole milk', 'other vegetables']",0.007727503812913066,0.2992125984251969,4.003749531308587
+0,"['tropical fruit', 'whipped/sour cream']","['whole milk', 'other vegetables']",0.004372140315200813,0.3161764705882353,4.230742296918768
+0,"['tropical fruit', 'other vegetables']","['yogurt', 'whole milk']",0.0075241484494153535,0.20963172804532576,3.7485964460468706
+0,"['yogurt', 'whipped/sour cream']","['whole milk', 'other vegetables']",0.005490594814438231,0.2647058823529412,3.5420168067226894
+0,"['tropical fruit', 'whole milk', 'rolls/buns']",['yogurt'],0.004778851042196238,0.4351851851851851,3.1218426668827832
+0,"['tropical fruit', 'root vegetables']","['yogurt', 'whole milk']",0.005592272496187087,0.26570048309178745,4.751207729468599
+0,"['tropical fruit', 'whipped/sour cream']","['yogurt', 'whole milk']",0.004270462633451958,0.3088235294117647,5.522326203208556
