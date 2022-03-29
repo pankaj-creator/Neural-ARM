@@ -1,7 +1,7 @@
 ﻿# -*- coding: utf-8 -*-
 """
 Created on Wed Jul 24 11:01:26 2019
-@author: H K PATEL
+@author: Dr. H K PATEL
 """
 import time
 start = time.time()
@@ -15,6 +15,7 @@ from sklearn.decomposition import NMF
 import tensorflow as tf
 from sklearn.metrics import roc_auc_score
 import seaborn as sns
+import re
 
 sns.set_style("whitegrid")
 
@@ -94,18 +95,20 @@ for item in association_results:
 
     #second index of the inner list
     print("Support: " + str(item[1]))
-
     #third index of the list located at 0th 
     #of the third index of the inner list
 
     print("Confidence: " + str(item[2][0][2]))
     print("Lift: " + str(item[2][0][3]))
     #conviction
-    Convicn=(1-float(str(item[1])))/(1-float(str(item[2][0][2])))
-    print("Conviction: " + Convicn)
+    sup=re.sub("[^\d\.]", "", str(item[1]))
+    confd=re.sub("[^\d\.]", "", str(item[2][0][2]))
+    Convicn=(1-float(sup))/(1-float(confd))
+    print("Conviction: " + str(Convicn))
     print("=====================================")
+    #print(str(item[2][0][4]))
         
-    temp = pd.DataFrame({'item1':[ item1], 'item2': [item2], 'Support': (item[1]), 'Confidence': (item[2][0][2]), 'Lift': (item[2][0][3])})
+    temp = pd.DataFrame({'item1':[ item1], 'item2': [item2], 'Support': (item[1]), 'Confidence': (item[2][0][2]), 'Lift': (item[2][0][3]), 'Conviction':(Convicn)})
     result_apriory = pd.concat([result_apriory, temp])
 
 result_apriory.to_csv("result_apriory.csv", sep=',')    
