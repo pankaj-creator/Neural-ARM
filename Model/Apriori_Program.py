@@ -17,6 +17,9 @@ from sklearn.metrics import roc_auc_score
 import seaborn as sns
 import re
 
+import warnings
+warnings.simplefilter("ignore", UserWarning)
+
 sns.set_style("whitegrid")
 
 cols = ['1','2','3','4','5','6','7','8','9','10','11','12',
