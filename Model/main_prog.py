@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Jan 20 23:14:58 2018
-
-@author: Dr. H K Patel
+@author: Dr. H K Patel, Pankaj, Aditya
 """
 import time
 start = time.time()
@@ -11,6 +9,9 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 from sklearn.metrics import roc_auc_score
+
+import warnings
+warnings.simplefilter("ignore", UserWarning)
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -196,7 +197,6 @@ with tf.Session() as session:
 i = 100
 #print("Items in basket: ",get_items_from_ohe(test_x[i],unique_items))
 print("Recommended item(s): ",get_items_from_ohe(item_preds[i],unique_items))
-
 """
 model = NMF(n_components=100, init='random', random_state=0)
 transation_w = model.fit_transform(item_preds)
