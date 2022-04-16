@@ -9,6 +9,7 @@ PF-Growth in Python
 import time
 start = time.time()
 
+#import fpGrowth
 import pyfpgrowth
 import numpy as np
 import matplotlib.pyplot as plt
@@ -19,6 +20,9 @@ import tensorflow as tf
 from sklearn.metrics import roc_auc_score
 import seaborn as sns
 import re
+
+import warnings
+warnings.simplefilter("ignore", UserWarning)
 
 sns.set_style("whitegrid")
 
@@ -80,14 +84,19 @@ for i in range(0, len(df)):
 FrequentPatterns=pyfpgrowth.find_frequent_patterns(transactions=records,support_threshold=0.5)
 print(FrequentPatterns)
 # Generating rules with min confidence threshold=0.5
-Rules=pyfpgrowth.generate_association_rules(patterns=FrequentPatterns,confidence_threshold=0.5)
-Rules
+association_rules=pyfpgrowth.generate_association_rules(patterns=FrequentPatterns,confidence_threshold=0.5)
 
 """
 association_rules = apriori(records,min_support=0.004, min_confidence=0.2, min_lift=3, min_length=2)
 association_results = list(association_rules)
 result_apriory = pd.DataFrame()
 """
+#patterns = pyfpgrowth. find_frequent_patterns(transactions, 0.5)
+#association_rules = pyfpgrowth. generate_association_rules(patterns,0.5)
+association_results = list(association_rules)
+result_FPGrowth = pd.DataFrame()
+
+
 for item in association_results:
     if len((list(item.ordered_statistics[0].items_base)))< 2:
        continue
