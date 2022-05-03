@@ -21,7 +21,7 @@ cols = ['1','2','3','4','5','6','7','8','9','10','11','12',
         '13','14','15','16','17','18','19','20','21','22',
         '23','24','25','26','27','28','29','30','31','32']
 
-df = pd.read_csv("groceries.csv", sep = ",", 
+df = pd.read_csv("dataset/groceries-1.csv", sep = ",", 
                  names = cols, engine = "python")
 data = np.array(df)
 df.head(5)
@@ -105,9 +105,9 @@ training_epochs = 30
 batch_size = 50
 total_batches = (train_x.shape[0] // batch_size)
 
-learning_rate = 0.00002
-keep_prob = 0.6
-l2_reg_rate = 0.00001
+learning_rate = 0.0010 #data obtain in range 0.0002 to 0.0010 
+keep_prob = 0.8
+l2_reg_rate = 0.000001
 
 tf.reset_default_graph()
 
@@ -224,5 +224,8 @@ for i in range(100):
     conviction_A_B=(1-support_B)/(1-confidence_A_B)
     print(i+1, "{" + str(unique_items[xx[0,n-1]]) + "}" +"=>" "{" + str(unique_items[xx[0,n-2]]) + "}"+" "+ "support="+ str(round(support_A_B,2)) +" "+ "confidence=" + str(round(confidence_A_B,2))  +" "+ "lift=" + str(round(lift_A_B,2))  +" "+ "conviction=" + str(round(conviction_A_B,2)) )
 
+'''    temp = pd.DataFrame({'item1':[ item1], 'item2': [item2], 'Support': (item[1]), 'Confidence': (item[2][0][2]), 'Lift': (item[2][0][3]), 'Conviction':(Convicn)})
+    result_apriory = pd.concat([result_mainProg, temp])
+result_mainProg.to_csv("result_mainProg.csv", sep=',') '''
 end = time.time()
-print("Time consumed in working: ",end - start)
+print("Time consumed in working optimized algorithm: ",end - start)
