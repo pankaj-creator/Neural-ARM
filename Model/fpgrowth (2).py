@@ -25,6 +25,7 @@ cols = ['1','2','3','4','5','6','7','8','9','10','11','12',
 df = pd.read_csv("groceries.csv", sep = ",", 
                  names = cols, engine = "python")
 data = np.array(df)
+
 def get_unique_items(data):
     ncol = data.shape[1]
     items = set()
@@ -151,7 +152,7 @@ dataset.shape
 from mlxtend.frequent_patterns import fpgrowth
 #from mlxtend.frequent_patterns import fpgrowth
 #running the fpgrowth algorithm
-res=fpgrowth(dataset, min_support=0.004, use_colnames=True)
+res=fpgrowth(dataset, min_support=0.002, use_colnames=True)
 
 # printing top 10
 res.head(10)
@@ -161,7 +162,7 @@ res.head(10)
 from mlxtend.frequent_patterns import association_rules
 
 # creating asssociation rules
-fpgrowth_rules=association_rules(res, metric="lift", min_threshold=0.2,)
+fpgrowth_rules=association_rules(res, metric="lift", min_threshold=0.5,)
 
 # printing association rules
 fpgrowth_rules
