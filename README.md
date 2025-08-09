@@ -203,7 +203,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **⭐ Star this repository if you find this research useful!**
 
 **📚 [Read our published paper 1](https://www.ijraset.com/research-paper/association-rule-mining-using-fp-growth) 
-📚 [Read our published paper 2](https://www.riverpublishers.com/pdf/ebook/chapter/RP_9788770227667C9.pdf) 
+<br>
+📚 [Read our published paper 2](https://www.riverpublishers.com/pdf/ebook/chapter/RP_9788770227667C9.pdf)
+<br> 
 📊 [View complete report](./Docs/Final_Report.pdf) 
+<br>
 🔬 [Explore the code](./Model/)**
 
