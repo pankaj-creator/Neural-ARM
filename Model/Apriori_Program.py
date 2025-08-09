@@ -1,7 +1,7 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
-Created on Wed Jul 24 11:01:26 2019
-@author: Dr. H K PATEL
+Created on Wed Feb 12 11:01:26 2022
+@author: Pankaj, Aditya
 """
 import time
 start = time.time()
@@ -26,7 +26,7 @@ cols = ['1','2','3','4','5','6','7','8','9','10','11','12',
         '13','14','15','16','17','18','19','20','21','22',
         '23','24','25','26','27','28','29','30','31','32']
 
-df = pd.read_csv("groceries.csv", sep = ",", 
+df = pd.read_csv("dataset/shopdata.csv", sep = ",", 
                  names = cols, engine = "python")
 data = np.array(df)
 t=df.head(5)
@@ -71,12 +71,12 @@ plt.show()
 
 
 records = []
-df = pd.read_csv("groceries.csv", sep = ",", names = cols, engine = "python")
+df = pd.read_csv("dataset/groceries-1.csv", sep = ",", names = cols, engine = "python")
 for i in range(0, len(df)):
     records.append([str(df.values[i,j]) for j in range(0, 32)])
 
 
-association_rules = apriori(records,min_support=0.004, min_confidence=0.2, min_lift=3, min_length=2)
+association_rules = apriori(records,min_support=0.002, min_confidence=0.3, min_lift=3, min_length=2)
 association_results = list(association_rules)
 result_apriory = pd.DataFrame()
 for item in association_results:
@@ -116,4 +116,4 @@ for item in association_results:
 
 result_apriory.to_csv("result_apriory.csv", sep=',')    
 end = time.time() 
-print("Time consumed in working: ",end - start)
+print("Time consumed in working of Apriori Algorithm: ",end - start)

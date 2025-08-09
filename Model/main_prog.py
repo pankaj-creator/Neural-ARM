@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: Dr. H K Patel, Pankaj, Aditya
+@author: Pankaj, Aditya
 """
 import time
 start = time.time()

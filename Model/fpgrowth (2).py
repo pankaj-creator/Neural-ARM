@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jul 24 11:01:26 2019
-@author: Dr. H K PATEL
+@author: Pankaj, Aditya
 """
 import time
 start = time.time()
